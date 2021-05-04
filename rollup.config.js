@@ -3,6 +3,7 @@ import cjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import shim from "rollup-plugin-shim";
 import { terser } from "rollup-plugin-terser";
+import gzipPlugin  from "rollup-plugin-gzip";
 
 export function openTelemetryCommonJs() {
   const namedExports = {};
@@ -74,5 +75,6 @@ export default {
     }),
     json(),
     terser(),
+    gzipPlugin()
   ],
 };
